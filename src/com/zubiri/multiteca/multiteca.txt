@@ -1,0 +1,3 @@
+titulodisco,autordisco,anioEdiciondisco,discografia,nCanciones
+titulolibro,autorlibro,anioEdicionlibro,editorial,numPaginas
+titulopelicula,autorpelicula,anioEdicion,productora,interpretes

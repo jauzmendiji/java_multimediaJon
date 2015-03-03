@@ -17,7 +17,7 @@ public final class Multiteca {
 
 	public static void mostrarMultiteca(String fichero)throws IOException {
 		
-		Obra dana;
+		String dana;
 		FileInputStream f;
 	    InputStreamReader fr;
 	    BufferedReader br;
@@ -27,7 +27,10 @@ public final class Multiteca {
     	br = new BufferedReader(fr);
     	dana = br.readLine();
     	
+    	while ((dana != null) && (dana.compareTo("") != 0)) {
     	multiteca.add(dana);
+    	dana = br.readLine();
+		}
     	br.close();
 	}
 	
