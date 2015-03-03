@@ -1,24 +1,35 @@
 package com.zubiri.multiteca;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Disco extends Obra{
 	
-	private String discografia;
+	private String discografica;
 	private int nCanciones;
 	
-	public Disco(String titulo, Artista autor, int anioEdicion, String discografia, int nCanciones) {
+	public Disco(String titulo, Artista autor, int anioEdicion, String discografica, int nCanciones) {
 		super(titulo, autor, anioEdicion);
-		this.discografia = discografia;
+		this.discografica = discografica;
 		this.nCanciones = nCanciones;
 	}
-	
-	public String getDiscografia() {
+	public Disco (Scanner sc) throws IOException{
 		
-		return discografia;
+		super(sc);
+		System.out.println("Escribe la discografica del disco");
+		this.setDiscografica(sc.next());
+		System.out.println("Escribe el numero de canciones");
+		this.setnCanciones(sc.nextInt());
 	}
 	
-	public void setDiscografia(String discografia) {
+	public String getDiscografica() {
 		
-		this.discografia = discografia;
+		return discografica;
+	}
+	
+	public void setDiscografica(String discografica) {
+		
+		this.discografica = discografica;
 	}
 	
 	public int getnCanciones() {
@@ -31,7 +42,20 @@ public class Disco extends Obra{
 		this.nCanciones = nCanciones;
 	}
 	
+	public void mostrarObra(){
+		
+		System.out.println("Disco:");
+		super.mostrarObra();
+		System.out.println("\tDiscografica: " + this.discografica);
+		System.out.println("\tNumero de canciones del disco: " + this.nCanciones);
+	}
+	
 	public String formattedObra() {
 		
+		String DiscoStr = 
+				"DISCOGRAFICA:" + this.discografica + "\n" + 
+				"NUMERO DE CANCIONES:" + this.nCanciones  + "\n" ;
+				
+				return DiscoStr;
 	}
 }

@@ -1,6 +1,8 @@
 package com.zubiri.multiteca;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Pelicula extends Obra{
 
@@ -11,6 +13,15 @@ public class Pelicula extends Obra{
 		super(titulo, autor, anioEdicion);
 		this.productora = productora;
 		this.interpretes = interpretes;
+	}
+	
+	public Pelicula (Scanner sc) throws IOException{
+		
+		super(sc);
+		System.out.println("Escribe la productora");
+		this.setProductora(sc.next());
+		System.out.println("Escribe el numero de interpretes");
+		this.setInterpretes(interpretes);
 	}
 		
 	public String getProductora() {
@@ -33,8 +44,21 @@ public class Pelicula extends Obra{
 		this.interpretes = interpretes;
 	}
 	
+public void mostrarObra(){
+		
+		System.out.println("Pelicula:");
+		super.mostrarObra();
+		System.out.println("\tProductora: " + this.productora);
+		System.out.println("\tInterpretes: " + this.interpretes);
+	}
+	
 	public String formattedObra() {
 		
+		String PeliStr = 
+				"PRODUCTORA:" + this.productora + "\n" + 
+				"INTERPRETES:" + this.interpretes  + "\n" ;
+				
+				return PeliStr;
 	}
 
 }
